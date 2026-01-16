@@ -44,9 +44,9 @@ export default function App() {
   const startDigioFlow = () => {
     digioRef.current
       ?.start(
-        'DID250620124007254HMECCYJ5NTQZ7A',
+        'KID260116135930450KHFQJGAE5UPTD5',
         'akash.kumar@digio.in',
-        'GWT250620124007359AYAU73KH2LBGES'
+        'GWT260116135930469YBFLM9OLJSPUCS'
       )
       .then((res: any) => {
         console.log(res);
