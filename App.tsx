@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { ScrollView, StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { Digio, Environment, ServiceMode, DigioConfig } from '@digiotech/react-native';
 import type { GatewayEvent } from '@digiotech/react-native';
 
@@ -8,12 +8,17 @@ export default function App() {
   const [digioEvent, setDigioEvent] = useState<string | null>(null);
   const digioRef = useRef<any>(null);
 
+  const additionalData: Record<string, string> = {};
+  additionalData["dg_preferred_auth_type"] = "debit";
+
   useEffect(() => {
+
 
     const digioConfig: DigioConfig = {
   environment: Environment.PRODUCTION,
   serviceMode: ServiceMode.OTP,
-  logo: 'https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png',
+  logo:'https://resources.groww.in/web-assets/img/website-logo/groww_logo.webp',
+  // logo: 'https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png',
   theme: {
     primaryColor: '#b03a2e',
     secondaryColor: '#b03a2e',
@@ -44,9 +49,10 @@ export default function App() {
   const startDigioFlow = () => {
     digioRef.current
       ?.start(
-        'KID260116135930450KHFQJGAE5UPTD5',
-        'akash.kumar@digio.in',
-        'GWT260116135930469YBFLM9OLJSPUCS'
+        'KID2602XXXXS19116PHRTG',
+        'aka@digio.in',
+        'GWT2602xxxxxxxYMNQQ76UEZM9S',
+        additionalData
       )
       .then((res: any) => {
         console.log(res);
@@ -57,8 +63,27 @@ export default function App() {
       .catch((err: any) => console.error(err));
   };
 
+  // This is for stateless feature
+  const startStatelessFlow = () => {
+  digioRef.current
+    ?.startStateless({
+      clientId: "Your client id",
+      clientSecretKey: "Your client secret key",
+      taskTypes: ["SELFIE"],
+      locationRequired: true,
+      shouldShowInstructions: false,
+    })
+    .then((res: any) => {
+      console.log(res);
+      setDigioResult(res);
+    })
+    .catch((err: any) => console.error(err));
+};
+
   return (
+     
     <View style={styles.container}>
+      <ScrollView contentContainerStyle={{ paddingTop: 20, paddingBottom: 20 }}>
       <Text>Digio Sample</Text>
       <View style={styles.resultContainer}>
         <Text>Result:</Text>
@@ -68,12 +93,19 @@ export default function App() {
         <Text>Event:</Text>
         <Text>{digioEvent ? digioEvent : 'Waiting...'}</Text>
       </View>
-
+</ScrollView>
       {/* Floating Action Button */}
       <TouchableOpacity style={styles.fab} onPress={startDigioFlow}>
         <Text style={styles.fabText}>►</Text>
       </TouchableOpacity>
+
+          {/* Floating Action Button 2 */}
+    <TouchableOpacity style={styles.fabSecond} onPress={startStatelessFlow}>
+      <Text style={styles.fabText}>⚡</Text>
+    </TouchableOpacity>
+
     </View>
+    
   );
 }
 
@@ -107,6 +139,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     elevation: 5,
   },
+    fabSecond: {
+  position: 'absolute',
+  bottom: 30,
+  right: 90, // move left so it doesn't overlap
+  width: 60,
+  height: 60,
+  borderRadius: 30,
+  backgroundColor: '#03dac6',
+  justifyContent: 'center',
+  alignItems: 'center',
+  elevation: 5,
+},
   fabText: {
     color: '#fff',
     fontSize: 30,
