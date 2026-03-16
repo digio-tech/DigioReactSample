@@ -14,11 +14,10 @@ export default function App() {
   useEffect(() => {
 
 
-    const digioConfig: DigioConfig = {
+  const digioConfig: DigioConfig = {
   environment: Environment.PRODUCTION,
   serviceMode: ServiceMode.OTP,
-  logo:'https://resources.groww.in/web-assets/img/website-logo/groww_logo.webp',
-  // logo: 'https://www.gstatic.com/mobilesdk/160503_mobilesdk/logo/2x/firebase_28dp.png',
+  logo:'https://www.digio.in/images/digio_blue.png',
   theme: {
     primaryColor: '#b03a2e',
     secondaryColor: '#b03a2e',
