@@ -10,7 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "@digiotech/react-native": "2.0.11-beta.4",
+    "@digiotech/react-native": "^2.0.11",
     "@react-native-firebase/analytics": "23.8.2",
     "@react-native-firebase/app": "23.8.2",
     "@react-native-firebase/auth": "23.8.2",

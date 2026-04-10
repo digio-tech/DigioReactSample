@@ -1522,13 +1522,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@digiotech/react-native@npm:2.0.11-beta.4":
-  version: 2.0.11-beta.4
-  resolution: "@digiotech/react-native@npm:2.0.11-beta.4"
+"@digiotech/react-native@npm:^2.0.11":
+  version: 2.0.11
+  resolution: "@digiotech/react-native@npm:2.0.11"
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 10c0/1180fc75d427b89c08d683d8291cb3b68ccb32b74571a46eb8cbfd6eb3ac91ddce1149e0765b38fe3fcd041b11c0aa174a39483baad3b3df6b9307670f464f8b
+  checksum: 10c0/6256cf70f9b9af567ee8ae4b291226ba0dcf9e91a1ce1dadef5fe66d0cde44b33dbc5a009279f56cd2383faa10d7465c6f89c248ac2222b77539ec2d93c01e6c
   languageName: node
   linkType: hard
 
@@ -3593,7 +3593,7 @@ __metadata:
     "@babel/core": "npm:^7.25.2"
     "@babel/preset-env": "npm:^7.25.3"
     "@babel/runtime": "npm:^7.25.0"
-    "@digiotech/react-native": "npm:2.0.11-beta.4"
+    "@digiotech/react-native": "npm:^2.0.11"
     "@react-native-community/cli": "npm:15.0.1"
     "@react-native-community/cli-platform-android": "npm:15.0.1"
     "@react-native-community/cli-platform-ios": "npm:15.0.1"

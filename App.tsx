@@ -15,7 +15,7 @@ export default function App() {
 
 
   const digioConfig: DigioConfig = {
-  environment: Environment.PRODUCTION,
+  environment: Environment.SANDBOX,
   serviceMode: ServiceMode.OTP,
   logo:'https://www.digio.in/images/digio_blue.png',
   theme: {
@@ -48,9 +48,9 @@ export default function App() {
   const startDigioFlow = () => {
     digioRef.current
       ?.start(
-        'KID2602XXXXS19116PHRTG',
-        'aka@digio.in',
-        'GWT2602xxxxxxxYMNQQ76UEZM9S',
+        'KID2604091301595013JYPOM7FPAHV3N',
+        'akash.kumar@digio.in',
+        'GWT260409130159518V4LQ8ODNAB6NDS',
         additionalData
       )
       .then((res: any) => {
@@ -66,11 +66,12 @@ export default function App() {
   const startStatelessFlow = () => {
   digioRef.current
     ?.startStateless({
-      clientId: "Your client id",
-      clientSecretKey: "Your client secret key",
+      clientId: "AIMEV4BA6BE2MRYI7VUQ77HIO4PARA27UK",
+      clientSecretKey: "",
       taskTypes: ["SELFIE"],
       locationRequired: true,
       shouldShowInstructions: false,
+      token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmFuc2FjdGlvbl9pZCI6IlRYTjE3NzU4MDIxNjYyMDIyMjQzIiwidGVtcGxhdGVfbmFtZSI6IkpXVF9TRUxGSUVfVEVTVCIsImN1c3RvbWVyX2lkZW50aWZpZXIiOiJha2FzaC5rdW1hckBkaWdpby5pbiIsImV4cCI6MTc3NjY2NjE2Nn0.OOPDE3M2xiX5RAB4s1fqoM_xEctTn2Zg_b4tllSPYqM"
     })
     .then((res: any) => {
       console.log(res);
