@@ -3,6 +3,9 @@ import { ScrollView, StyleSheet, View, Text, TouchableOpacity } from 'react-nati
 import { Digio, Environment, ServiceMode, DigioConfig } from '@digiotech/react-native';
 import type { GatewayEvent } from '@digiotech/react-native';
 
+import jwt from 'react-native-jwt-io';
+
+
 export default function App() {
   const [digioResult, setDigioResult] = useState<any | null>(null);
   const [digioEvent, setDigioEvent] = useState<string | null>(null);
@@ -15,7 +18,7 @@ export default function App() {
 
 
   const digioConfig: DigioConfig = {
-  environment: Environment.SANDBOX,
+  environment: Environment.PRODUCTION,
   serviceMode: ServiceMode.OTP,
   logo:'https://www.digio.in/images/digio_blue.png',
   theme: {
@@ -64,21 +67,56 @@ export default function App() {
 
   // This is for stateless feature
   const startStatelessFlow = () => {
+    const txnId = `TXN${Date.now()}${Math.floor(1000 + Math.random() * 9000)}`;
+    const token =  generateToken(
+      "29GZ6GQI6JAEODN1P893MHUDH2MRAB7R",
+      txnId,
+      "JWT_SELFIE_TEST",
+      "akash.kumar@digio.in",
+      10000
+    );
+    console.log(token);
+    
+
+// "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmFuc2FjdGlvbl9pZCI6IlRYTjE3NzYxNjQwNTcyMjE5MDUxIiwidGVtcGxhdGVfbmFtZSI6IkpXVF9TRUxGSUVfVEVTVCIsImN1c3RvbWVyX2lkZW50aWZpZXIiOiJha2FzaC5rdW1hckBkaWdpby5pbiIsImV4cCI6MTc3NzAyODA1N30.D5-C4Jb3KCekg-vbtE5moC4RPRaI5RPXpnuIO0aABtU" 
   digioRef.current
     ?.startStateless({
-      clientId: "Your client ID",
+      clientId: "AIMEV4BA6BE2MRYI7VUQ77HIO4PARAB27UK",
       clientSecretKey: "", //(keep empty)
       taskTypes: ["SELFIE"],
       locationRequired: true,
       shouldShowInstructions: false,
-      token: "your Bearer Token" 
-    })
+      token: token
+      
+    }) 
     .then((res: any) => {
       console.log(res);
       setDigioResult(res);
     })
     .catch((err: any) => console.error(err));
 };
+
+
+
+
+const generateToken = (
+  clientSecret: string,
+  transactionId: string,
+  templateName: string,
+  customerIdentifier: string,
+  expirySeconds: number
+): string => {
+  const payload = {
+    transaction_id: transactionId,
+    template_name: templateName,
+    customer_identifier: customerIdentifier,
+    exp: Math.floor(Date.now() / 1000) + expirySeconds,
+  };
+
+  return `Bearer ${jwt.encode(payload, clientSecret)}`;
+};
+
+
 
   return (
      

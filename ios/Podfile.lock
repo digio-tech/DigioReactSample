@@ -10,8 +10,8 @@ PODS:
     - GoogleUtilities/UserDefaults (~> 8.0)
     - PromisesObjC (~> 2.4)
   - boost (1.84.0)
-  - digio-react-native (2.0.11):
-    - digio-react-native/Core (= 2.0.11)
+  - digio-react-native (2.0.14):
+    - digio-react-native/Core (= 2.0.14)
     - DoubleConversion
     - glog
     - hermes-engine
@@ -32,7 +32,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - digio-react-native/Core (2.0.11):
+  - digio-react-native/Core (2.0.14):
     - DigioEsignSDK
     - DigiokycSDK
     - DoubleConversion
@@ -2060,7 +2060,7 @@ SPEC CHECKSUMS:
   AppAuth: 1c1a8afa7e12f2ec3a294d9882dfa5ab7d3cb063
   AppCheckCore: cc8fd0a3a230ddd401f326489c99990b013f0c4f
   boost: 1dca942403ed9342f98334bf4c3621f011aa7946
-  digio-react-native: 7499c320896a54d2061e6f6299c3763264a17536
+  digio-react-native: 1db4bd55176db556e77c3b31792312b1821c4fe2
   DigioCaptureKit: 95f0275fbb8bcf9a6faada508858d028e4c6bcd1
   DigioEsignSDK: 6dd659b244c9217d9e95f4923f3f1b87fd09394b
   DigiokycSDK: d5be5878a1e04d239fd1c7441f0944c174adec30
