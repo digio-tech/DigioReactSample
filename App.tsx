@@ -69,19 +69,17 @@ export default function App() {
   const startStatelessFlow = () => {
     const txnId = `TXN${Date.now()}${Math.floor(1000 + Math.random() * 9000)}`;
     const token =  generateToken(
-      "29GZ6GQI6JAEODN1P893MHUDH2MRAB7R",
+      "Your client Secret Key",
       txnId,
-      "JWT_SELFIE_TEST",
-      "akash.kumar@digio.in",
-      10000
+      "template name",
+      "identifier",
+      10000 // time to expire in seconds
     );
     console.log(token);
     
-
-// "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0cmFuc2FjdGlvbl9pZCI6IlRYTjE3NzYxNjQwNTcyMjE5MDUxIiwidGVtcGxhdGVfbmFtZSI6IkpXVF9TRUxGSUVfVEVTVCIsImN1c3RvbWVyX2lkZW50aWZpZXIiOiJha2FzaC5rdW1hckBkaWdpby5pbiIsImV4cCI6MTc3NzAyODA1N30.D5-C4Jb3KCekg-vbtE5moC4RPRaI5RPXpnuIO0aABtU" 
   digioRef.current
     ?.startStateless({
-      clientId: "AIMEV4BA6BE2MRYI7VUQ77HIO4PARAB27UK",
+      clientId: "Your client ID",
       clientSecretKey: "", //(keep empty)
       taskTypes: ["SELFIE"],
       locationRequired: true,
@@ -98,7 +96,7 @@ export default function App() {
 
 
 
-
+// token generation locally for testing. But token generation should be happen from backend
 const generateToken = (
   clientSecret: string,
   transactionId: string,
