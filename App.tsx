@@ -51,9 +51,9 @@ export default function App() {
   const startDigioFlow = () => {
     digioRef.current
       ?.start(
-        'KID26XXXXXXXXOM7FPAHV3N',
-        'aka@digio.in',
-        'GWT26XXXX518V4LQ8ODNAB6NDS',
+        'DID260622165946623UKTNC8UGZ2JUF2',
+        'akash.kumar@digio.in',
+        'GWT260622165946827DTHP8M8TVBZ7GS',
         additionalData
       )
       .then((res: any) => {
@@ -69,22 +69,23 @@ export default function App() {
   const startStatelessFlow = () => {
     const txnId = `TXN${Date.now()}${Math.floor(1000 + Math.random() * 9000)}`;
     const token =  generateToken(
-      "Your client Secret Key",
+      "29GZ6GQI6JAEODN1P893MHUDH2MRAB7R",
       txnId,
-      "template name",
-      "identifier",
+      "JWT_SELFIE_TEST",
+      "akash.kumar@digio.in",
       10000 // time to expire in seconds
     );
     console.log(token);
     
   digioRef.current
     ?.startStateless({
-      clientId: "Your client ID",
-      clientSecretKey: "", //(keep empty)
+      clientId: "ACK250401181947045SUOFZ2OJ7DG8YL",
+      clientSecretKey: "JEK7AXXWMIABM6VCFOCYRP7IXTQEXP7L", //(keep empty)
       taskTypes: ["SELFIE"],
       locationRequired: true,
       shouldShowInstructions: false,
-      token: token
+      token: "",
+      // token: token
       
     }) 
     .then((res: any) => {

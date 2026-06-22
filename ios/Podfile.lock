@@ -10,8 +10,8 @@ PODS:
     - GoogleUtilities/UserDefaults (~> 8.0)
     - PromisesObjC (~> 2.4)
   - boost (1.84.0)
-  - digio-react-native (2.0.14):
-    - digio-react-native/Core (= 2.0.14)
+  - digio-react-native (2.0.15):
+    - digio-react-native/Core (= 2.0.15)
     - DoubleConversion
     - glog
     - hermes-engine
@@ -32,7 +32,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - digio-react-native/Core (2.0.14):
+  - digio-react-native/Core (2.0.15):
     - DigioEsignSDK
     - DigiokycSDK
     - DoubleConversion
@@ -55,13 +55,8 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - DigioCaptureKit (2.0.4):
-    - DigioCaptureKit/Core (= 2.0.4)
-  - DigioCaptureKit/Core (2.0.4):
-    - GTMSessionFetcher
-    - PromisesObjC (~> 2.4)
   - DigioEsignSDK (1.0.11)
-  - DigiokycSDK (2.0.4)
+  - DigiokycSDK (2.0.5)
   - DoubleConversion (1.1.6)
   - FBLazyVector (0.76.5)
   - Firebase/Auth (12.8.0):
@@ -223,11 +218,7 @@ PODS:
   - GTMAppAuth (5.0.0):
     - AppAuth/Core (~> 2.0)
     - GTMSessionFetcher/Core (< 4.0, >= 3.3)
-  - GTMSessionFetcher (3.5.0):
-    - GTMSessionFetcher/Full (= 3.5.0)
   - GTMSessionFetcher/Core (3.5.0)
-  - GTMSessionFetcher/Full (3.5.0):
-    - GTMSessionFetcher/Core
   - hermes-engine (0.76.5):
     - hermes-engine/Pre-built (= 0.76.5)
   - hermes-engine/Pre-built (0.76.5)
@@ -1799,7 +1790,6 @@ PODS:
 DEPENDENCIES:
   - boost (from `../node_modules/react-native/third-party-podspecs/boost.podspec`)
   - "digio-react-native (from `../node_modules/@digiotech/react-native`)"
-  - DigioCaptureKit
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - fmt (from `../node_modules/react-native/third-party-podspecs/fmt.podspec`)
@@ -1877,7 +1867,6 @@ SPEC REPOS:
   trunk:
     - AppAuth
     - AppCheckCore
-    - DigioCaptureKit
     - DigioEsignSDK
     - DigiokycSDK
     - Firebase
@@ -2060,10 +2049,9 @@ SPEC CHECKSUMS:
   AppAuth: 1c1a8afa7e12f2ec3a294d9882dfa5ab7d3cb063
   AppCheckCore: cc8fd0a3a230ddd401f326489c99990b013f0c4f
   boost: 1dca942403ed9342f98334bf4c3621f011aa7946
-  digio-react-native: 1db4bd55176db556e77c3b31792312b1821c4fe2
-  DigioCaptureKit: 95f0275fbb8bcf9a6faada508858d028e4c6bcd1
+  digio-react-native: 7b2d0e638a8b970c99749b182fda905a7b0d15f1
   DigioEsignSDK: 6dd659b244c9217d9e95f4923f3f1b87fd09394b
-  DigiokycSDK: d5be5878a1e04d239fd1c7441f0944c174adec30
+  DigiokycSDK: b5d6e5a3cc77e8978ba7629d5efa9da410928964
   DoubleConversion: f16ae600a246532c4020132d54af21d0ddb2a385
   FBLazyVector: 1bf99bb46c6af9a2712592e707347315f23947aa
   Firebase: 9a58fdbc9d8655ed7b79a19cf9690bb007d3d46d
@@ -2163,6 +2151,6 @@ SPEC CHECKSUMS:
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: 7548e4449365bf0ef60db4aefe58abff37fcabec
 
-PODFILE CHECKSUM: c9f348d32eb0c07e036f111f366392aaaaa3d024
+PODFILE CHECKSUM: c65f69589d39f7dc8a8985de704daa6cb12a2ab7
 
 COCOAPODS: 1.16.2

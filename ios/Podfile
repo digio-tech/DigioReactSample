@@ -20,12 +20,12 @@ target 'AwesomeProject' do
   # use_frameworks!
     use_frameworks! :linkage => :static
 
- pod 'DigioCaptureKit'
+#  pod 'DigioCaptureKit'
       # pod 'DigioCaptureKit', '2.0.4'
 
 
-  # pod 'DigioCaptureKit', :git => 'https://github.com/digio-tech/digio-capture-kit-ios.git', :tag => '2.0.4'
-  # pod 'DigiokycSDK', :git => 'https://github.com/digio-tech/digio-iOS-KYC-SDK.git', :tag => '2.0.3-beta.5'
+  # pod 'DigioCaptureKit', :git => 'https://github.com/digio-tech/digio-capture-kit-ios.git', :tag => '2.0.4-beta.1'
+  # pod 'DigiokycSDK', :git => 'https://github.com/digio-tech/digio-iOS-KYC-SDK.git', :tag => '2.0.6-beta.1'
   config = use_native_modules!
 
   use_react_native!(
