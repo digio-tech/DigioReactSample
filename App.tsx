@@ -22,7 +22,7 @@ export default function App() {
   serviceMode: ServiceMode.OTP,
   logo:'https://www.digio.in/images/digio_blue.png',
   theme: {
-    primaryColor: '#b03a2e',
+    primaryColor: '#75514d',
     secondaryColor: '#b03a2e',
     fontFamily: '',
     fontUrl: '',
@@ -51,9 +51,9 @@ export default function App() {
   const startDigioFlow = () => {
     digioRef.current
       ?.start(
-        'DID260622165946623UKTNC8UGZ2JUF2',
+        'KIDXXX8252B33B1WZQSQ38S',
         'akash.kumar@digio.in',
-        'GWT260622165946827DTHP8M8TVBZ7GS',
+        'GWT26062218XXXXOINZSMVH9K5LS',
         additionalData
       )
       .then((res: any) => {
@@ -69,23 +69,22 @@ export default function App() {
   const startStatelessFlow = () => {
     const txnId = `TXN${Date.now()}${Math.floor(1000 + Math.random() * 9000)}`;
     const token =  generateToken(
-      "29GZ6GQI6JAEODN1P893MHUDH2MRAB7R",
+      "your client secret key", 
       txnId,
-      "JWT_SELFIE_TEST",
-      "akash.kumar@digio.in",
+      "your template name",
+      "identifier",
       10000 // time to expire in seconds
     );
     console.log(token);
     
   digioRef.current
     ?.startStateless({
-      clientId: "ACK250401181947045SUOFZ2OJ7DG8YL",
-      clientSecretKey: "JEK7AXXWMIABM6VCFOCYRP7IXTQEXP7L", //(keep empty)
+      clientId: "Your clinet Id", // clinet_id and client secert provided by digio
+      clientSecretKey: "", //(keep empty)
       taskTypes: ["SELFIE"],
       locationRequired: true,
       shouldShowInstructions: false,
-      token: "",
-      // token: token
+      token: token
       
     }) 
     .then((res: any) => {
